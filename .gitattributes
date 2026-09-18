@@ -1,0 +1,15 @@
+# Menandai Makefile dan Dockerfile secara eksplisit
+Makefile linguist-language=Makefile
+Dockerfile linguist-language=Dockerfile
+
+# Menandai Script Shell (.sh)
+*.sh linguist-language=Shell
+
+# Menandai File Konfigurasi (YAML & JSON)
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
+*.json linguist-language=JSON
+
+# Opsional: Jika ingin menyembunyikan file tes/contoh agar tidak mendominasi statistik statistik bahasa
+tests/* linguist-vendored
+examples/* linguist-documentation
