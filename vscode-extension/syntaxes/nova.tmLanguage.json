@@ -1,0 +1,75 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Nova",
+  "scopeName": "source.nova",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#symbols" },
+    { "include": "#keywords" },
+    { "include": "#operators" },
+    { "include": "#constants" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.double-slash.nova", "match": "//.*$" },
+        { "name": "comment.block.nova", "begin": "/\\*", "end": "\\*/" }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.nova",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            { "name": "constant.character.escape.nova", "match": "\\\\." }
+          ]
+        },
+        {
+          "name": "string.quoted.single.nova",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            { "name": "constant.character.escape.nova", "match": "\\\\." }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        { "name": "constant.numeric.nova", "match": "\\b\\d+(?:\\.\\d+)?\\b" }
+      ]
+    },
+    "symbols": {
+      "patterns": [
+        { "name": "keyword.control.nova", "match": "[⟁⎋⯈⯇]" },
+        { "name": "keyword.operator.assignment.nova", "match": "⤍" }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.nova",
+          "match": "\\b(?:let|print|if|else|while|for|function|return)\\b"
+        },
+        {
+          "name": "keyword.operator.word.nova",
+          "match": "\\b(?:and|or|not)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        { "name": "keyword.operator.nova", "match": "===?|!==?|>=?|<=?|[+*/%\\-]" }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        { "name": "constant.language.boolean.nova", "match": "\\b(?:true|false)\\b" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+// Contoh penggunaan variabel di Nova
+let nama = "Noval"
+let umur = 20
+let tinggi = 172.5
+let sudahMenikah = false
+
+print(nama)
+print(umur)
+print(tinggi)
+print(sudahMenikah)
+
+print("Nama saya " + nama + ", umur " + umur + " tahun")

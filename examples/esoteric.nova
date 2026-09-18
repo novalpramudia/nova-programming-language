@@ -1,0 +1,10 @@
+⟁ teks ⤍ "Halo dari Nova Esoteris!"
+⎋(teks)
+
+⟁ nilai ⤍ 100
+
+⯈ nilai >= 50 {
+    ⎋("Lulus!")
+} ⯇ {
+    ⎋("Gagal!")
+}

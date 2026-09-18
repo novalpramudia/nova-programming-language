@@ -1,0 +1,30 @@
+{
+  "name": "nova-language-support",
+  "displayName": "Nova Language Support",
+  "description": "Syntax highlighting for the Nova programming language.",
+  "version": "0.1.0",
+  "publisher": "nova-lang",
+  "engines": {
+    "vscode": ">=1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "nova",
+        "aliases": ["Nova", "nova"],
+        "extensions": [".nova"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "nova",
+        "scopeName": "source.nova",
+        "path": "./syntaxes/nova.tmLanguage.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+let umur = 20
+
+if umur >= 18 {
+    print("Dewasa")
+} else {
+    print("Belum dewasa")
+}
+
+let nilai = 75
+
+if nilai >= 90 {
+    print("Grade: A")
+} else if nilai >= 75 {
+    print("Grade: B")
+} else if nilai >= 60 {
+    print("Grade: C")
+} else {
+    print("Grade: D")
+}

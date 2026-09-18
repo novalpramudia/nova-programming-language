@@ -1,0 +1,19 @@
+{
+  "name": "nova-lang",
+  "version": "0.1.0",
+  "description": "Nova - bahasa pemrograman sederhana buatan sendiri (.nova)",
+  "main": "src/main/cli.js",
+  "bin": {
+    "nova": "src/main/cli.js"
+  },
+  "scripts": {
+    "test": "node tests/run-tests.js",
+    "start": "node src/main/cli.js"
+  },
+  "keywords": ["nova", "programming-language", "interpreter", "lexer", "parser"],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
