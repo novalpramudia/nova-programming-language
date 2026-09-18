@@ -1,11 +1,24 @@
 version: '3.8'
 
 services:
-  nova-app:
+  nova-interpreter:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: nova_runner
+    container_name: nova_app
+    environment:
+      - NODE_ENV=development
     volumes:
       - .:/app
     command: node src/main/cli.js examples/hello.nova
+
+  nova-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nova_test_runner
+    environment:
+      - NODE_ENV=test
+    volumes:
+      - .:/app
+    command: npm test

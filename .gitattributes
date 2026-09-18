@@ -1,10 +1,10 @@
-# Paksa file YAML di workflows agar dihitung sebagai bahasa biasa
-.github/workflows/ci.yml linguist-detectable=true
-.github/workflows/ci.yml linguist-language=YAML
+# Masukkan YAML ke statistik bahasa
 .github/workflows/*.yml linguist-detectable=true
 .github/workflows/*.yml linguist-language=YAML
+*.yml linguist-detectable=true
+*.yml linguist-language=YAML
 
-# Bahasa pendukung lainnya
+# Konfigurasi bahasa pendukung lainnya
 Makefile linguist-language=Makefile
 Dockerfile linguist-language=Dockerfile
 *.sh linguist-language=Shell
