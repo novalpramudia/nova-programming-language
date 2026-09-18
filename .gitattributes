@@ -1,8 +1,10 @@
-# Paksa GitHub Linguist mendeteksi folder .github
-.github/** linguist-detectable=true
+# Paksa file YAML di workflows agar dihitung sebagai bahasa biasa
+.github/workflows/ci.yml linguist-detectable=true
+.github/workflows/ci.yml linguist-language=YAML
+.github/workflows/*.yml linguist-detectable=true
 .github/workflows/*.yml linguist-language=YAML
 
-# Konfigurasi bahasa lainnya
+# Bahasa pendukung lainnya
 Makefile linguist-language=Makefile
 Dockerfile linguist-language=Dockerfile
 *.sh linguist-language=Shell

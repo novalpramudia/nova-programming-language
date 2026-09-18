@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  nova-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nova_runner
+    volumes:
+      - .:/app
+    command: node src/main/cli.js examples/hello.nova
