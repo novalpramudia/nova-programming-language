@@ -1,8 +1,8 @@
-# Deteksi YAML di seluruh sub-folder (termasuk .github/workflows/)
-**/*.yml linguist-language=YAML
-**/*.yaml linguist-language=YAML
+# Paksa GitHub Linguist mendeteksi folder .github
+.github/** linguist-detectable=true
+.github/workflows/*.yml linguist-language=YAML
 
-# Konfigurasi pendukung lainnya
+# Konfigurasi bahasa lainnya
 Makefile linguist-language=Makefile
 Dockerfile linguist-language=Dockerfile
 *.sh linguist-language=Shell
