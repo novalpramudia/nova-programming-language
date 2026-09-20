@@ -7,6 +7,8 @@
 # 2. Map file .nova ke JavaScript (agar tidak terdeteksi sebagai Brainfuck)
 *.nova linguist-detectable=true
 *.nova linguist-language=JavaScript
+*.nova linguist-vendored=false
+*.nova linguist-documentation=false
 
 # 3. Konfigurasi bahasa pendukung lainnya
 Makefile linguist-language=Makefile
