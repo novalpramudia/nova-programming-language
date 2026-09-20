@@ -1,0 +1,24 @@
+{
+  "Hello World Nova": {
+    "prefix": ["hello", "nova"],
+    "body": [
+      "// Program Nova",
+      "print(\"Halo dunia!\")"
+    ],
+    "description": "Cetak Halo Dunia di Nova"
+  },
+  "Print Statement": {
+    "prefix": "print",
+    "body": [
+      "print(\"${1:teks}\")"
+    ],
+    "description": "Fungsi cetak output"
+  },
+  "Variable Declaration": {
+    "prefix": "let",
+    "body": [
+      "let ${1:nama} = ${2:nilai}"
+    ],
+    "description": "Deklarasi variabel"
+  }
+}

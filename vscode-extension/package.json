@@ -1,22 +1,28 @@
 {
   "name": "nova-language-support",
   "displayName": "Nova Language Support",
-  "description": "Syntax highlighting for the Nova programming language.",
+  "description": "Language support, icon, and snippets for the Nova programming language.",
   "version": "0.1.0",
   "publisher": "nova-lang",
   "engines": {
     "vscode": ">=1.80.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Snippets"
   ],
+  "icon": "icon.png",
   "contributes": {
     "languages": [
       {
         "id": "nova",
         "aliases": ["Nova", "nova"],
         "extensions": [".nova"],
-        "configuration": "./language-configuration.json"
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icon.png",
+          "dark": "./icon.png"
+        }
       }
     ],
     "grammars": [
@@ -24,6 +30,12 @@
         "language": "nova",
         "scopeName": "source.nova",
         "path": "./syntaxes/nova.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "nova",
+        "path": "./snippets.json"
       }
     ]
   }

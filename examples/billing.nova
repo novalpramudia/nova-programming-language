@@ -1,0 +1,110 @@
+/*
+ * billing.nova
+ *
+ * Perhitungan tagihan listrik pelanggan rumah tangga berdasarkan
+ * golongan tarif dan pemakaian kWh dalam satu periode.
+ *
+ * Dijalankan dengan: nova billing.nova
+ */
+
+// --- Data pelanggan ---------------------------------------------------
+
+let idPelanggan   = "5321-0099-8812"
+let namaPelanggan = "Rumah Tangga R1"
+let golongan      = "R1"
+let subsidi       = false
+
+// --- Pembacaan meter --------------------------------------------------
+
+let meterAwal   = 14820
+let meterAkhir  = 15196
+let pemakaian   = meterAkhir - meterAwal
+
+// --- Parameter tarif (Rupiah per kWh) ---------------------------------
+
+let tarifSubsidi    = 605.0
+let tarifNonSubsidi = 1444.7
+let biayaAdmin      = 3500
+let ppnPersen       = 11
+
+// --- Penentuan tarif dasar --------------------------------------------
+
+let tarifDasar = tarifNonSubsidi
+
+if subsidi == true {
+    tarifDasar = tarifSubsidi
+} else {
+    tarifDasar = tarifNonSubsidi
+}
+
+// --- Perhitungan biaya ------------------------------------------------
+
+let biayaPemakaian = pemakaian * tarifDasar
+let ppn            = biayaPemakaian * ppnPersen / 100
+let totalTagihan   = biayaPemakaian + ppn + biayaAdmin
+
+// --- Klasifikasi pemakaian --------------------------------------------
+
+let kategori = "tidak diketahui"
+
+if pemakaian >= 900 {
+    kategori = "sangat tinggi"
+} else if pemakaian >= 450 {
+    kategori = "tinggi"
+} else if pemakaian >= 200 {
+    kategori = "sedang"
+} else if pemakaian > 0 {
+    kategori = "rendah"
+} else {
+    kategori = "tidak ada pemakaian"
+}
+
+// --- Deteksi anomali meter --------------------------------------------
+
+let anomali = false
+
+if meterAkhir < meterAwal {
+    anomali = true
+}
+
+let sisaBagi = pemakaian % 50
+
+// --- Laporan ----------------------------------------------------------
+
+print("=====================================")
+print(" TAGIHAN LISTRIK - PERIODE BERJALAN")
+print("=====================================")
+print("ID Pelanggan   : " + idPelanggan)
+print("Nama           : " + namaPelanggan)
+print("Golongan       : " + golongan)
+print("Meter awal     : " + meterAwal)
+print("Meter akhir    : " + meterAkhir)
+print("Pemakaian      : " + pemakaian + " kWh")
+print("Kategori       : " + kategori)
+print("-------------------------------------")
+print("Tarif per kWh  : " + tarifDasar)
+print("Biaya pemakaian: " + biayaPemakaian)
+print("PPN " + ppnPersen + "%        : " + ppn)
+print("Biaya admin    : " + biayaAdmin)
+print("-------------------------------------")
+print("TOTAL TAGIHAN  : " + totalTagihan)
+print("=====================================")
+
+if anomali == true {
+    print("PERINGATAN: meter akhir lebih kecil dari meter awal.")
+    print("Tagihan ditahan, menunggu verifikasi petugas.")
+} else {
+    print("Status: tagihan valid dan siap diterbitkan.")
+}
+
+if totalTagihan > 500000 {
+    print("Catatan: tagihan melewati batas wajar, kirim notifikasi SMS.")
+} else if totalTagihan > 250000 {
+    print("Catatan: tagihan di atas rata-rata golongan ini.")
+} else {
+    print("Catatan: tagihan dalam batas normal.")
+}
+
+if sisaBagi != 0 {
+    print("Sisa pembulatan blok 50 kWh: " + sisaBagi)
+}

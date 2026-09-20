@@ -36,7 +36,7 @@ Fitur yang **belum ada** di v0.1 (rencana untuk versi berikutnya):
 - [ ] `for`
 - [ ] `function` dan `return`
 - [ ] `array`
-- [ ] VS Code Extension
+- [x] VS Code Extension (language support, snippets, and icon)
 
 ## Instalasi
 
@@ -121,7 +121,7 @@ nova/
 │   │   └── environment.js
 │   └── main/
 │       └── cli.js      # Entry point command `nova`
-├── vscode-extension/   # (menyusul di versi berikutnya)
+├── vscode-extension/   # VS Code language support, snippets, and icon
 ├── examples/           # Contoh program .nova
 ├── tests/
 │   └── run-tests.js

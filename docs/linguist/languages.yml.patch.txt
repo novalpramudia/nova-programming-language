@@ -1,0 +1,60 @@
+# =====================================================================
+#  POTONGAN UNTUK lib/linguist/languages.yml
+# =====================================================================
+#
+#  CARA PAKAI
+#  ----------
+#  1. Buka lib/linguist/languages.yml
+#  2. Sisipkan blok "Nova:" di bawah ini pada posisi ALFABETIS yang benar
+#     (berada setelah entri yang diawali "No..." sebelum Nova, dan sebelum
+#     entri berikutnya seperti "Nu", "NumPy", "Nunjucks", dst).
+#     Urutan alfabetis WAJIB — ada test yang mengecek ini.
+#  3. Indentasi: 2 spasi, gunakan SPASI bukan TAB.
+#  4. JANGAN isi language_id secara manual. Biarkan kosong, lalu jalankan:
+#         script/update-ids
+#     Script itu yang akan mengisi angkanya secara unik.
+#
+#  CATATAN PENTING
+#  ---------------
+#  * tm_scope: source.nova hanya valid kalau grammar TextMate dengan
+#    scopeName "source.nova" SUDAH ditambahkan ke repo lewat:
+#         script/add-grammar https://github.com/<user>/nova-tmlanguage
+#    Kalau grammar belum ada, test Linguist akan GAGAL. Untuk sementara
+#    (sebelum grammar publik tersedia) nilainya harus: tm_scope: none
+#
+#  * ace_mode: text dipakai karena Ace Editor belum punya mode "nova".
+#    Ini normal dan diterima untuk bahasa baru.
+#
+#  * codemirror_mode / codemirror_mime_type sengaja TIDAK diisi karena
+#    CodeMirror belum punya mode untuk Nova. Field opsional ini lebih baik
+#    dihilangkan daripada diisi nilai yang salah.
+#
+# =====================================================================
+
+
+# --- VERSI A: setelah grammar source.nova tersedia di vendor/grammars ---
+
+Nova:
+  type: programming
+  color: "#ff5722"
+  extensions:
+  - ".nova"
+  interpreters:
+  - nova
+  tm_scope: source.nova
+  ace_mode: text
+  language_id:
+
+
+# --- VERSI B: kalau grammar belum tersedia (tm_scope wajib "none") ------
+#
+# Nova:
+#   type: programming
+#   color: "#ff5722"
+#   extensions:
+#   - ".nova"
+#   interpreters:
+#   - nova
+#   tm_scope: none
+#   ace_mode: text
+#   language_id:
