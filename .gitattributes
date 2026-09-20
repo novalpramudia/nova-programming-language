@@ -1,10 +1,13 @@
-# Masukkan YAML ke statistik bahasa
+# 1. Paksa GitHub mendeteksi file YAML di dalam folder .github
 .github/workflows/*.yml linguist-detectable=true
 .github/workflows/*.yml linguist-language=YAML
 *.yml linguist-detectable=true
 *.yml linguist-language=YAML
 
-# Konfigurasi bahasa pendukung lainnya
+# 2. Map file .nova ke JavaScript (agar tidak terdeteksi sebagai Brainfuck)
+*.nova linguist-language=JavaScript
+
+# 3. Konfigurasi bahasa pendukung lainnya
 Makefile linguist-language=Makefile
 Dockerfile linguist-language=Dockerfile
 *.sh linguist-language=Shell
