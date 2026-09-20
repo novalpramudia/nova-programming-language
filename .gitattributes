@@ -4,9 +4,9 @@
 *.yml linguist-detectable=true
 *.yml linguist-language=YAML
 
-# 2. Map file .nova ke JavaScript (agar tidak terdeteksi sebagai Brainfuck)
+# 2. Map file .nova ke Kotlin untuk statistik dan syntax highlighting GitHub
 *.nova linguist-detectable=true
-*.nova linguist-language=JavaScript
+*.nova linguist-language=Kotlin
 *.nova linguist-vendored=false
 *.nova linguist-documentation=false
 
