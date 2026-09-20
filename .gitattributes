@@ -5,6 +5,7 @@
 *.yml linguist-language=YAML
 
 # 2. Map file .nova ke JavaScript (agar tidak terdeteksi sebagai Brainfuck)
+*.nova linguist-detectable=true
 *.nova linguist-language=JavaScript
 
 # 3. Konfigurasi bahasa pendukung lainnya
